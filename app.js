@@ -26,5 +26,22 @@ Vue.createApp({
 			this.rotateY = 0;
 			this.rotateZ = 0;
 		},
+		copy() {
+			const el = document.createElement("textarea");
+
+			// the bellow 3 lines will hide the element textarea from the user
+			el.setAttribute("readonly", " ");
+			el.style.position = "absolute";
+			el.style.left = "-9999px";
+
+			el.value = `transform: ${this.box.transform}`;
+			document.body.appendChild(el);
+			el.select();
+
+			// allows to perform user actions on the browser
+			document.execCommand("copy");
+
+			document.body.removeChild(el);
+		},
 	},
 }).mount("#app");
