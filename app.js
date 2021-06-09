@@ -7,4 +7,16 @@ let vm = Vue.createApp({
 			rotateZ: 0,
 		};
 	},
+	computed: {
+		box() {
+			return {
+				transform: `
+          perpective(${this.perspective}px)
+          rotate(${this.rotateX}deg)
+          rotate(${this.rotateY}deg)
+          rotate(${this.rotateZ}deg)
+        `,
+			};
+		},
+	},
 }).mount("#app");
