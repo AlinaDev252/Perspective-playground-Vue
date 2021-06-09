@@ -1,4 +1,4 @@
-let vm = Vue.createApp({
+Vue.createApp({
 	data() {
 		return {
 			perspective: 100,
@@ -11,10 +11,10 @@ let vm = Vue.createApp({
 		box() {
 			return {
 				transform: `
-          perpective(${this.perspective}px)
-          rotate(${this.rotateX}deg)
-          rotate(${this.rotateY}deg)
-          rotate(${this.rotateZ}deg)
+          perspective(${this.perspective}px)
+          rotateX(${this.rotateX}deg)
+          rotateY(${this.rotateY}deg)
+          rotateZ(${this.rotateZ}deg)
         `,
 			};
 		},
